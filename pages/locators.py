@@ -9,3 +9,10 @@ class ProductPageLocators():
 class AddToBasketLocators():
     PRODUCT_IN_BASKET = (By.CSS_SELECTOR, ".alertinner ")
     PRICE_IN_BASKET = (By.CSS_SELECTOR, ".alert-info .alertinner  p strong")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+
+class LoginPageLocators():
+    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+    REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
