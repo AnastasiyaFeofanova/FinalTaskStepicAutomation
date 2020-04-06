@@ -10,11 +10,6 @@ class BasePage():
         self.browser = browser
         self.url = url
 
-    def __init__(self, browser, url, timeout=3):
-        self.browser = browser
-        self.url = url
-        self.browser.implicitly_wait(timeout)
-
     def open(self):
         self.browser.get(self.url)
 
@@ -64,3 +59,7 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
